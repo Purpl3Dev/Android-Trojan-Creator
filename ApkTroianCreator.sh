@@ -53,11 +53,13 @@ then
     echo "Keytool is not installed!"
     echo "You need to install openjdk-8-jre, check installation guide for your distro"
 fi
-echo "choose an alias for your key"
+echo "choose an alias for your key:"
 read alias
 keytool -genkey -V -keystore key.keystore -alias $alias -keyalg RSA -keysize 2048 -validity 10000
 
 #this should be ok.
+echo "Signing your apk..."
+sleep 1
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore key.keystore android_shell.apk $alias
 
 #if you didn't do it before you need to install zipalign or skip this part and do it with another software.
