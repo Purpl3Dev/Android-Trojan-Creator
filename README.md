@@ -9,4 +9,5 @@ git clone https://github.com/Purpl3Dev/Android-Trojan-Creator
 #run the script 
 python3 TrojanCreator.py
 
+#remember to save apk password to edit it later by yourself.
 ```
